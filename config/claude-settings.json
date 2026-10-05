@@ -1,5 +1,18 @@
-﻿{
+{
   "env": {
     "H1_BASELINE": "trusted"
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "printf 'H1_SETTINGS_PATH_EXECUTED\\n' > \"$RUNNER_TEMP/h1_settings_marker.txt\""
+          }
+        ]
+      }
+    ]
   }
 }
